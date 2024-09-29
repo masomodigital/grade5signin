@@ -47,6 +47,33 @@
             margin-bottom: 10px;
         }
 
+        /* Styling for the submit button */
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+
+        /* Styling for the copy password button */
+        #copyPasswordBtn {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #copyPasswordBtn:hover {
+            background-color: darkred;
+        }
+
         /* Added styles for specific elements */
         h1 {
             color: red;
@@ -69,6 +96,7 @@
         <p><strong>Name:</strong> <input name="name" type="text" required /></p>
         <p><strong>Password:</strong> <input name="password" type="password" required /></p>
         <input type="submit" value="Submit" />
+        <button type="button" id="copyPasswordBtn" onclick="copyPassword()">Copy Password</button>
     </form>
 
     <script>
@@ -85,6 +113,16 @@
             }
             window.location.href = "https://sites.google.com/view/forgrade-5/home";
             return false;
+        }
+
+        function copyPassword() {
+            var tempInput = document.createElement("input");
+            tempInput.value = "23406635";
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Password copied: 23406635");
         }
     </script>
 
